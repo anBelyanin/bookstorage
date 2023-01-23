@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"title\",\n    \"author\": \"author\",\n    \"description\": \"description\"\n}",
+					"raw": "{\n    \"title\": \"A\",\n    \"author\": \"author1\",\n    \"description\": \"description\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -37,7 +37,17 @@
 			"name": "grouped-books",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/grouped-books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"grouped-books"
+					]
+				}
 			},
 			"response": []
 		},
@@ -45,15 +55,47 @@
 			"name": "sorted-books",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/sorted-books",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sorted-books"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "authors-by-char",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"charForCounting\": \"A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authors-by-char",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authors-by-char"
+					]
+				}
 			},
 			"response": []
 		}
