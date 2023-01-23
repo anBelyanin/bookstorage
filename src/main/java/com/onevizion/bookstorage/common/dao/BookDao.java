@@ -23,24 +23,19 @@ public class BookDao {
     }
 
     public List<Book> getBooksSortedByTitleDesc() {
-        List<Book> result = jdbcTemplate.query(Constants.Queries.SELECT_ALL_BOOKS_SORTED_BY_TITLE_DESC_QUERY, rowMapper);
-        return result;
+        return jdbcTemplate.query(Constants.Queries.SELECT_ALL_BOOKS_SORTED_BY_TITLE_DESC_QUERY, rowMapper);
     }
 
     public List<String> getAuthorsNames() {
-        List<String> authorsNames = jdbcTemplate.queryForList(Constants.Queries.SELECT_ALL_AUTHORS_NAMES_QUERY, String.class);
-        return authorsNames;
+        return jdbcTemplate.queryForList(Constants.Queries.SELECT_ALL_AUTHORS_NAMES_QUERY, String.class);
     }
 
     public List<Book> getBooksByAuthorName(String authorName) {
-        List<Book> booksByAuthor =
-                jdbcTemplate.query(Constants.Queries.SELECT_BOOKS_BY_AUTHOR_QUERY, rowMapper, authorName);
-        return booksByAuthor;
+        return jdbcTemplate.query(Constants.Queries.SELECT_BOOKS_BY_AUTHOR_QUERY, rowMapper, authorName);
     }
 
     public Long getMaxId() {
-        Long result = jdbcTemplate.queryForObject(Constants.Queries.SELECT_MAX_ID_QUERY, Long.class);
-        return result;
+        return jdbcTemplate.queryForObject(Constants.Queries.SELECT_MAX_ID_QUERY, Long.class);
     }
 
     public boolean createBook(Book book) {
